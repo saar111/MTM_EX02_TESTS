@@ -28,7 +28,7 @@ def print_input_file_test_failure(input_name):
     print("Expected: <a href='/ex02/staging/{STAGING_ID}/expected_outputs/" + input_name + "'>expected_" + input_name + "</a>, but got instead: <a href='/ex02/staging/{STAGING_ID}/outputs/" + input_name + "'>{}</a>".format(input_name))
 
 def print_test_error(err):
-    print("Test encountered an exception. Exception details:\n{}".format(traceback.format_exc()).replace(" ", "&nbsp;"))
+    print("Test encountered an exception. Exception details:\n{}".format(traceback.format_exc()))
 
 def run_input_file_test(input_name):
     eventManager.fileCorrect(INPUTS_PATH + input_name, OUTPUTS_PATH + input_name)
