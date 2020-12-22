@@ -47,13 +47,13 @@ def run_test(test):
 
         if not test_result:
             print_input_file_test_failure(input_name)
-
-    try:
-        pass
-    except AssertionError as err:
-        pass
-    except Exception as err:
-        pass
+    else:
+        try:
+            pass
+        except AssertionError as err:
+            pass
+        except Exception as err:
+            pass
 
     if test_result:
         print("[OK]")
