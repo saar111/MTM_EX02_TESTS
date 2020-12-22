@@ -24,15 +24,15 @@ def did_test_succeed(input_name):
     return filecmp.cmp(EXPECTED_OUTPUTS_PATH + input_name, OUTPUTS_PATH + input_name)
 
 
-def print_test_failure(input_name):
-    print("[Failure]")
-    print("<a href='#'>TEST_LINKOUTOS</a>")
+def print_input_file_test_failure(input_name):
+    print("[Failed]")
+    print("Expected: <a href='/ex02/staging/{STAGING_ID}/expected_outputs/" + input_name + "'>" + input_name + "</a>, but got instead: <a href='/ex02/staging/{STAGING_ID}/outputs/" + input_name + "'>{}</a>".format(input_name))
 
 def print_test_error(err):
     print("Test encountered an exception. Exception details:\n{}".format(traceback.format_exc()))
 
 def run_input_file_test(input_name):
-    print("<hr><br>Running test: {} ... ".format(input_name), end="")
+    print("<hr>+ Running test: {} ... ".format(input_name), end="")
     try:
         eventManager.fileCorrect(INPUTS_PATH + input_name, OUTPUTS_PATH + input_name)
     except Exception as err:
@@ -44,7 +44,7 @@ def run_input_file_test(input_name):
         print("[OK]")
         return True
     else:
-        print_test_failure(input_name)
+        print_input_file_test_failure(input_name)
         return False
 
 
