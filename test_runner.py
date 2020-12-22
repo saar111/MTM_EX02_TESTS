@@ -56,9 +56,9 @@ def run_test(test):
         except Exception as err:
             print_test_error(err)
             test_result = False
-
-        if not test_result:
-            print_input_file_test_failure(input_name)
+        else:
+            if not test_result:
+                print_input_file_test_failure(input_name)
     else:
         try:
             print("+ Running test: <b>{}</b> ... ".format(test.__name__))
