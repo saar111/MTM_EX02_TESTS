@@ -26,7 +26,7 @@ def did_test_succeed(input_name):
 
 def print_input_file_test_failure(input_name):
     print("[Failed]")
-    print("Expected: <a href='/ex02/staging/{STAGING_ID}/expected_outputs/" + input_name + "'>" + input_name + "</a>, but got instead: <a href='/ex02/staging/{STAGING_ID}/outputs/" + input_name + "'>{}</a>".format(input_name))
+    print("Expected: <a href='/ex02/staging/{STAGING_ID}/expected_outputs/" + input_name + "'>expected_" + input_name + "</a>, but got instead: <a href='/ex02/staging/{STAGING_ID}/outputs/" + input_name + "'>{}</a>".format(input_name))
 
 def print_test_error(err):
     print("Test encountered an exception. Exception details:\n{}".format(traceback.format_exc()))
