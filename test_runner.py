@@ -32,19 +32,22 @@ def print_test_error(err):
     print("Test encountered an exception. Exception details:\n{}".format(traceback.format_exc()))
 
 def run_input_file_test(input_name):
-    print("<hr>+ Running test: {} ... ".format(input_name), end="")
+    print("+ Running test: <b>{}</b> ... ".format(input_name), end="")
     try:
         eventManager.fileCorrect(INPUTS_PATH + input_name, OUTPUTS_PATH + input_name)
     except Exception as err:
         print_test_error(err)
+        print("<hr>")
         return False
 
     test_result = did_test_succeed(input_name)
     if test_result:
         print("[OK]")
+        print("<hr>")
         return True
     else:
         print_input_file_test_failure(input_name)
+        print("<hr>")
         return False
 
 
