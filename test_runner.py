@@ -25,30 +25,42 @@ def did_test_succeed(input_name):
 
 
 def print_input_file_test_failure(input_name):
-    print("[Failed]")
     print("Expected: <a href='/ex02/staging/{STAGING_ID}/expected_outputs/" + input_name + "'>expected_" + input_name + "</a>, but got instead: <a href='/ex02/staging/{STAGING_ID}/outputs/" + input_name + "'>{}</a>".format(input_name))
 
 def print_test_error(err):
     print("Test encountered an exception. Exception details:\n{}".format(traceback.format_exc()))
 
 def run_input_file_test(input_name):
-    print("+ Running test: <b>{}</b> ... ".format(input_name), end="")
-    try:
-        eventManager.fileCorrect(INPUTS_PATH + input_name, OUTPUTS_PATH + input_name)
-    except Exception as err:
-        print_test_error(err)
-        print("<hr>", end="")
-        return False
+    eventManager.fileCorrect(INPUTS_PATH + input_name, OUTPUTS_PATH + input_name)
+    return did_test_succeed(input_name)
 
-    test_result = did_test_succeed(input_name)
+def run_test(test):
+    test_result = True
+    if type(test) == str:
+        input_name = test
+        print("+ Running test: <b>{}</b> ... ".format(input_name))
+        try:
+            test_result = run_input_file_test(input_name)
+        except Exception as err:
+            print_test_error(err)
+            test_result = False
+
+        if not test_result:
+            print_input_file_test_failure(input_name)
+
+    try:
+        pass
+    except AssertionError as err:
+        pass
+    except Exception as err:
+        pass
+
     if test_result:
         print("[OK]")
-        print("<hr>", end="")
-        return True
     else:
-        print_input_file_test_failure(input_name)
-        print("<hr>", end="")
-        return False
+        print("[Failed]")
+
+    print("<hr>", end="")
 
 
 if __name__ == "__main__":
@@ -60,3 +72,5 @@ if __name__ == "__main__":
         run_input_file_test(input_path)
 
     # TODO: python tests
+    for test in tests1.TESTS:
+        pass
