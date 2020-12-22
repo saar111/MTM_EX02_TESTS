@@ -1,6 +1,7 @@
 import traceback
 import filecmp
 import os
+import re
 
 import programmatic_tests_part_1 as tests1
 import programmatic_tests_part_2 as tests2
@@ -9,6 +10,9 @@ import eventManager
 INPUTS_PATH = "./inputs/"
 EXPECTED_OUTPUTS_PATH = "./expected_outputs/"
 OUTPUTS_PATH = "./outputs/"
+
+FILE_CORRECT_TEST_PREFIX = "3.1.1_"
+YOUNGEST_TEST_PREFIX = "3.1.2.1_"
 
 
 def does_matching_output_exists(file_name):
@@ -27,15 +31,23 @@ def did_test_succeed(input_name):
 def print_input_file_test_failure(input_name):
     print("Expected: <a href='/ex02/staging/{STAGING_ID}/expected_outputs/" + input_name + "'>expected_" + input_name + "</a>, but got instead: <a href='/ex02/staging/{STAGING_ID}/outputs/" + input_name + "'>{}</a>".format(input_name))
 
+def print_assertion_failure(err):
+    print("Test failed at assertion, check exception trace for details. Exception details:\n{}".format(traceback.format_exc()))
+
+
 def print_test_error(err):
     print("Test encountered an exception. Exception details:\n{}".format(traceback.format_exc()))
 
 def run_input_file_test(input_name):
-    eventManager.fileCorrect(INPUTS_PATH + input_name, OUTPUTS_PATH + input_name)
+    if(input_name.startswith(FILE_CORRECT_TEST_PREFIX)):
+        eventManager.fileCorrect(INPUTS_PATH + input_name, OUTPUTS_PATH + input_name)
+    if(input_name.startswith(YOUNGEST_TEST_PREFIX)):
+        k = int(re.findall("k_(\d+)", input_name)[0])
+        eventManager.printYoungestStudents(INPUTS_PATH + input_name, OUTPUTS_PATH + input_name, k)
+
     return did_test_succeed(input_name)
 
 def run_test(test):
-    test_result = True
     if type(test) == str:
         input_name = test
         print("+ Running test: <b>{}</b> ... ".format(input_name))
@@ -49,11 +61,14 @@ def run_test(test):
             print_input_file_test_failure(input_name)
     else:
         try:
-            pass
+            test()
+            test_result = True
         except AssertionError as err:
-            pass
+            print_assertion_failure(err)
+            test_result = False
         except Exception as err:
-            pass
+            print_test_error(err)
+            test_result = False
 
     if test_result:
         print("[OK]")
@@ -68,8 +83,8 @@ if __name__ == "__main__":
 
     # TODO: python tests
     for test in tests1.TESTS:
-        pass
-        # (Also created outputs for youngest students)
+        run_test(test)
+        # (Also creates outputs for youngest students)
 
     if not os.path.exists(OUTPUTS_PATH):
         os.mkdir(OUTPUTS_PATH)
