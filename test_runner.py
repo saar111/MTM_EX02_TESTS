@@ -44,6 +44,8 @@ def run_input_file_test(input_name):
     if(input_name.startswith(YOUNGEST_TEST_PREFIX)):
         k = int(re.findall("k_(\d+)", input_name)[0])
         eventManager.printYoungestStudents(INPUTS_PATH + input_name, OUTPUTS_PATH + input_name, k)
+    else:
+        return True
 
     return did_test_succeed(input_name)
 
