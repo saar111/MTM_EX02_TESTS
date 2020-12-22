@@ -66,11 +66,13 @@ def run_test(test):
 if __name__ == "__main__":
     input_names = get_valid_input_names_to_run()
 
+    # TODO: python tests
+    for test in tests1.TESTS:
+        pass
+        # (Also created outputs for youngest students)
+
     if not os.path.exists(OUTPUTS_PATH):
         os.mkdir(OUTPUTS_PATH)
     for input_path in input_names:
         run_test(input_path)
 
-    # TODO: python tests
-    for test in tests1.TESTS:
-        pass
