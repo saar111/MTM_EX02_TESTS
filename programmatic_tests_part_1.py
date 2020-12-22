@@ -2,7 +2,7 @@
 
 class Tests(object):
     def testYoungStudentsNegativeKReturnsMinus1(self):
-        assert
+        assert 1
 
 TESTS = [
 
