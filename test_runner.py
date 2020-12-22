@@ -69,7 +69,7 @@ if __name__ == "__main__":
     if not os.path.exists(OUTPUTS_PATH):
         os.mkdir(OUTPUTS_PATH)
     for input_path in input_names:
-        run_input_file_test(input_path)
+        run_test(input_path)
 
     # TODO: python tests
     for test in tests1.TESTS:
