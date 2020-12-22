@@ -27,7 +27,8 @@ class Tests(object):
     @staticmethod
     def testYoungStudentsBasicUsageReturnsCorrectNumber():
         input_file_name = "3.1.2.1_young_students_basic_1_k_3.txt"
-        assert runYoungStudentsWithInputName(input_file_name, 3) == 3, "(Wrong value was: " + str(runYoungStudentsWithInputName(input_file_name, 3)) + ")"
+        assert runYoungStudentsWithInputName(input_file_name, 3) == 3,\
+            "(Wrong value was: " + str(runYoungStudentsWithInputName(input_file_name, 3)) + ")"
 
         input_file_name = "3.1.2.1_young_students_basic_2_k_4.txt"
         assert runYoungStudentsWithInputName(input_file_name, 4) == 2, "(Wrong value was: " + str(runYoungStudentsWithInputName(input_file_name, 4)) + ")"
@@ -72,9 +73,12 @@ class Tests(object):
     def testCorrectAgeAvgMegaShitstormTest():
         assert runCorrectAgeAvgWithInputName("3.1.2.2_correct_avg_shitstorm_test.txt", 1) == 37.285714285714285, "(Wrong value was: " + str(runCorrectAgeAvgWithInputName("3.1.2.2_correct_avg_shitstorm_test.txt", 1)) + ")"
         assert runCorrectAgeAvgWithInputName("3.1.2.2_correct_avg_shitstorm_test.txt", 2) == 18, "(Wrong value was: " + str(runCorrectAgeAvgWithInputName("3.1.2.2_correct_avg_shitstorm_test.txt", 2)) + ")"
-        assert runCorrectAgeAvgWithInputName("3.1.2.2_correct_avg_shitstorm_test.txt", 3) == 31, "(Wrong value was: " + str(runCorrectAgeAvgWithInputName("3.1.2.2_correct_avg_shitstorm_test.txt", 3)) + ")"
-        assert runCorrectAgeAvgWithInputName("3.1.2.2_correct_avg_shitstorm_test.txt", 4) == 19.333333333333332, "(Wrong value was: " + str(runCorrectAgeAvgWithInputName("3.1.2.2_correct_avg_shitstorm_test.txt", 4)) + ")"
-        assert runCorrectAgeAvgWithInputName("3.1.2.2_correct_avg_shitstorm_test.txt", 5) == 18, "(Wrong value was: " + str(runCorrectAgeAvgWithInputName("3.1.2.2_correct_avg_shitstorm_test.txt", 5)) + ")"
+        assert runCorrectAgeAvgWithInputName("3.1.2.2_correct_avg_shitstorm_test.txt", 3) == 31,\
+            "(Wrong value was: " + str(runCorrectAgeAvgWithInputName("3.1.2.2_correct_avg_shitstorm_test.txt", 3)) + ")"
+        assert runCorrectAgeAvgWithInputName("3.1.2.2_correct_avg_shitstorm_test.txt", 4) == 19.333333333333332,\
+            "(Wrong value was: " + str(runCorrectAgeAvgWithInputName("3.1.2.2_correct_avg_shitstorm_test.txt", 4)) + ")"
+        assert runCorrectAgeAvgWithInputName("3.1.2.2_correct_avg_shitstorm_test.txt", 5) == 18,\
+            "(Wrong value was: " + str(runCorrectAgeAvgWithInputName("3.1.2.2_correct_avg_shitstorm_test.txt", 5)) + ")"
         assert runCorrectAgeAvgWithInputName("3.1.2.2_correct_avg_shitstorm_test.txt", 6) == 0, "(Wrong value was: " + str(runCorrectAgeAvgWithInputName("3.1.2.2_correct_avg_shitstorm_test.txt", 6)) + ")"
         assert runCorrectAgeAvgWithInputName("3.1.2.2_correct_avg_shitstorm_test.txt", 15) == 20, "(Wrong value was: " + str(runCorrectAgeAvgWithInputName("3.1.2.2_correct_avg_shitstorm_test.txt", 15)) + ")"
 
