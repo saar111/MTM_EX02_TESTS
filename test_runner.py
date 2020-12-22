@@ -61,6 +61,7 @@ def run_test(test):
             print_input_file_test_failure(input_name)
     else:
         try:
+            print("+ Running test: <b>{}</b> ... ".format(test.__name__))
             test()
             test_result = True
         except AssertionError as err:
