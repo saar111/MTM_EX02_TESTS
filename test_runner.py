@@ -37,17 +37,17 @@ def run_input_file_test(input_name):
         eventManager.fileCorrect(INPUTS_PATH + input_name, OUTPUTS_PATH + input_name)
     except Exception as err:
         print_test_error(err)
-        print("<hr>")
+        print("<hr>", end="")
         return False
 
     test_result = did_test_succeed(input_name)
     if test_result:
         print("[OK]")
-        print("<hr>")
+        print("<hr>", end="")
         return True
     else:
         print_input_file_test_failure(input_name)
-        print("<hr>")
+        print("<hr>", end="")
         return False
 
 
