@@ -8,7 +8,7 @@ Run the following command to create a local environment to run the tests (on the
 
 
 ## 2. Running the tests after step 1
-Step 1 will create a directory called "tests" in the current directory you are at (where you did cd to).
+Step 1 will create a directory called "saars_tests" in the current directory you are at (where you did cd to).
 
 <b>Now run:</b>\
 &nbsp;&nbsp;&nbsp;&nbsp;$ cd saars_tests/\
