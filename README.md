@@ -2,7 +2,7 @@
 Run the following command to create a local environment to run the tests (on the csl server):\
 <b>&nbsp;&nbsp;&nbsp;&nbsp;$ source <(curl -s https://bit.ly/3poR8nU) <path-to-your-eventManager.py></b>
 
-<b>Example of how I would do it on server</b>\
+<b>Example of how I would do it on the server</b>\
 &nbsp;&nbsp;&nbsp;&nbsp;$ cd /home/saar.ofek/mtm/ex02/\
 &nbsp;&nbsp;&nbsp;&nbsp;$ source <(curl -L -s https://bit.ly/3poR8nU) ./eventManager.py
 
