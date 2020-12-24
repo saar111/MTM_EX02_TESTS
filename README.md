@@ -1,6 +1,6 @@
 ## 1. Creating local environemnt on the server
 Run the following command to create a local environment to run the tests (on the csl server):\
-&nbsp;&nbsp;&nbsp;&nbsp;$ source <(curl -s https://bit.ly/3poR8nU) <path-to-your-eventManager.py>
+<b>&nbsp;&nbsp;&nbsp;&nbsp;$ source <(curl -s https://bit.ly/3poR8nU) <path-to-your-eventManager.py></b>
 
 <b>Example of how I would do it on server</b>\
 &nbsp;&nbsp;&nbsp;&nbsp;$ cd /home/saar.ofek/mtm/ex02/\
