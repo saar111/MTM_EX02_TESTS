@@ -1,4 +1,4 @@
-## 1. Creating local environemnt on the server
+## 1. Creating local environment on the server
 Run the following command to create a local environment to run the tests (on the csl server):\
 <b>&nbsp;&nbsp;&nbsp;&nbsp;$ source <(curl -s https://bit.ly/3poR8nU) <path-to-your-eventManager.py></b>
 
