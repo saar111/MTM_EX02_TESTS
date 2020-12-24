@@ -4,7 +4,7 @@ Run the following command to create a local environment to run the tests (on the
 
 <b>Example of how I would do it on server</b>\
 &nbsp;&nbsp;&nbsp;&nbsp;$ cd /home/saar.ofek/mtm/ex02/\
-&nbsp;&nbsp;&nbsp;&nbsp;$ source <(curl -s https://bit.ly/3poR8nU) ./eventManager.py
+&nbsp;&nbsp;&nbsp;&nbsp;$ source <(curl -L -s https://bit.ly/3poR8nU) ./eventManager.py
 
 
 ## 2. Running the tests after step 1
