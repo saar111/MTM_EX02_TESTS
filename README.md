@@ -11,7 +11,7 @@ Run the following command to create a local environment to run the tests (on the
 Step 1 will create a directory called "tests" in the current directory you are at (where you did cd to).
 
 <b>Now run:</b>\
-&nbsp;&nbsp;&nbsp;&nbsp;$ cd saars_tests\
+&nbsp;&nbsp;&nbsp;&nbsp;$ cd saars_tests/\
 &nbsp;&nbsp;&nbsp;&nbsp;$ python3.6 ./test_runner.py
 
 This will run the tests locally on the server.
