@@ -15,3 +15,6 @@ Step 1 will create a directory called "tests" in the current directory you are a
 &nbsp;&nbsp;&nbsp;&nbsp;$ python3.6 ./test_runner.py
 
 This will run the tests locally on the server.
+
+
+(Don't copy the "$" in the commands, run them without it)
