@@ -12,7 +12,7 @@ Step 1 will create a directory called "saars_tests" in the current directory you
 
 <b>Now run:</b>\
 &nbsp;&nbsp;&nbsp;&nbsp;$ cd saars_tests/\
-&nbsp;&nbsp;&nbsp;&nbsp;$ python3.6 ./test_runner.py
+&nbsp;&nbsp;&nbsp;&nbsp;$ python3.6 ./run_test.py
 
 This will run the tests locally on the server.
 
