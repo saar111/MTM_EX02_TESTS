@@ -51,8 +51,8 @@ class Tests(object):
             "(Wrong value was: " + str(runYoungStudentsWithInputName(input_file_name, 1)) + ")"
 
     @staticmethod
-    def testYoungStudentsManyWrongStudentsAndGenerallyShit():
-        input_file_name = "3.1.2.1_young_students_many_wrong_students_and_generally_shit_k_100000.txt"
+    def testYoungStudentsManyWrongStudentsBigTest():
+        input_file_name = "3.1.2.1_young_students_many_wrong_students_and_big_dataset_100000.txt"
         assert runYoungStudentsWithInputName(input_file_name, 10000) == 20,\
             "(Wrong value was: " + str(runYoungStudentsWithInputName(input_file_name, 10000)) + ")"
         assert runYoungStudentsWithInputName(input_file_name, 17) == 17,\
