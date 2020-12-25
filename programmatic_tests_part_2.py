@@ -21,6 +21,10 @@ class Tests(object):
             EM.dateDestroy(event["date"])
         EM.destroyEventManager(em)
 
+    @staticmethod
+    def testsPrintEventsListFunctionsWith2SameEarliestDates():
+
+
 
 TESTS = method_list = [getattr(Tests, func) for func in dir(Tests) if
                        callable(getattr(Tests, func)) and not func.startswith("__")]
