@@ -87,7 +87,6 @@ if __name__ == "__main__":
     # TODO: python tests
     for test in tests1.TESTS:
         run_test(test)
-        # (Also creates outputs for youngest students)
 
     if not os.path.exists(OUTPUTS_PATH):
         os.mkdir(OUTPUTS_PATH)
