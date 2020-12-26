@@ -41,7 +41,7 @@ def print_test_error(err):
 def run_input_file_test(input_name):
     if(input_name.startswith(FILE_CORRECT_TEST_PREFIX)):
         eventManager.fileCorrect(INPUTS_PATH + input_name, OUTPUTS_PATH + input_name)
-    if(input_name.startswith(YOUNGEST_TEST_PREFIX)):
+    elif(input_name.startswith(YOUNGEST_TEST_PREFIX)):
         k = int(re.findall("k_(\d+)", input_name)[0])
         eventManager.printYoungestStudents(INPUTS_PATH + input_name, OUTPUTS_PATH + input_name, k)
     else:
