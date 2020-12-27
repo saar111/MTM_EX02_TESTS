@@ -1,6 +1,6 @@
 import os
 
-import eventManager
+# import eventManager
 
 
 def runYoungStudentsWithInputName(input_file_name, k):
