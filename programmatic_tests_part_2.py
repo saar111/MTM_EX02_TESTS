@@ -1,5 +1,5 @@
 import eventManager
-# import event_manager as EM
+import event_manager as EM
 
 
 def assert_test(received_value, expected_value, error_message=None):
