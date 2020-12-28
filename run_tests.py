@@ -29,25 +29,31 @@ def did_test_succeed(input_name):
 
 
 def print_input_file_test_failure(input_name):
-    print("Expected: <a href='/ex02/staging/{STAGING_ID}/expected_outputs/" + input_name + "'>expected_" + input_name + "</a>, but got instead: <a href='/ex02/staging/{STAGING_ID}/outputs/" + input_name + "'>{}</a>".format(input_name))
+    print(
+        "Expected: <a href='/ex02/staging/{STAGING_ID}/expected_outputs/" + input_name + "'>expected_" + input_name + "</a>, but got instead: <a href='/ex02/staging/{STAGING_ID}/outputs/" + input_name + "'>{}</a>".format(
+            input_name))
+
 
 def print_assertion_failure(err):
-    print("Test failed at assertion, check exception trace for details. Exception details:\n{}".format(traceback.format_exc()))
+    print("Test failed at assertion, check exception trace for details. Exception details:\n{}".format(
+        traceback.format_exc()))
 
 
 def print_test_error(err):
     print("Test encountered an exception. Exception details:\n{}".format(traceback.format_exc()))
 
+
 def run_input_file_test(input_name):
-    if(input_name.startswith(FILE_CORRECT_TEST_PREFIX)):
+    if (input_name.startswith(FILE_CORRECT_TEST_PREFIX)):
         eventManager.fileCorrect(INPUTS_PATH + input_name, OUTPUTS_PATH + input_name)
-    elif(input_name.startswith(YOUNGEST_TEST_PREFIX)):
+    elif (input_name.startswith(YOUNGEST_TEST_PREFIX)):
         k = int(re.findall("k_(\d+)", input_name)[0])
         eventManager.printYoungestStudents(INPUTS_PATH + input_name, OUTPUTS_PATH + input_name, k)
     else:
         return True
 
     return did_test_succeed(input_name)
+
 
 def run_test(test):
     if type(test) == str:
@@ -57,7 +63,7 @@ def run_test(test):
             test_result = run_input_file_test(input_name)
         except FileNotFoundError as err:
             print("Output file was not created!")
-            print("Error: {}", str(err))
+            print("Error: {}".format(str(err)))
             test_result = False
         except Exception as err:
             print_test_error(err)
@@ -96,4 +102,3 @@ if __name__ == "__main__":
         os.mkdir(OUTPUTS_PATH)
     for input_path in input_names:
         run_test(input_path)
-
