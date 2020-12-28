@@ -55,6 +55,10 @@ def run_test(test):
         print("+ Running test: <b>{}</b> ... ".format(input_name))
         try:
             test_result = run_input_file_test(input_name)
+        except FileNotFoundError as err:
+            print("Output file was not created!")
+            print("Error: {}", str(err))
+            test_result = False
         except Exception as err:
             print_test_error(err)
             test_result = False
