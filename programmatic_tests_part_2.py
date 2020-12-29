@@ -9,6 +9,10 @@ def assert_test(received_value, expected_value, error_message=None):
 
     assert received_value == expected_value, error_message
 
+def print_input_file_test_failure(input_name):
+    print(
+        "Expected: <a href='/ex02/staging/{STAGING_ID}/expected_outputs/" + input_name + "'>expected_" + input_name + "</a>, but got instead: <a href='/ex02/staging/{STAGING_ID}/outputs/" + input_name + "'>{}</a>".format(
+            input_name))
 
 class Tests(object):
     @staticmethod
@@ -22,7 +26,9 @@ class Tests(object):
             EM.dateDestroy(event["date"])
         EM.destroyEventManager(em)
 
-        assert_test(filecmp.cmp("./outputs/3.2.2_test_1.txt", "./expected_outputs/3.2.2_test_1.txt"), True)
+        input_name = "3.2.2_test_1.txt"
+        assert_test(filecmp.cmp("./outputs/3.2.2_test_1.txt", "./expected_outputs/3.2.2_test_1.txt"), True, "\nExpected: <a href='/ex02/staging/{STAGING_ID}/expected_outputs/" + input_name + "'>expected_" + input_name + "</a>, but got instead: <a href='/ex02/staging/{STAGING_ID}/outputs/" + input_name + "'>{}</a>".format(
+            input_name))
 
 
     @staticmethod
@@ -36,7 +42,9 @@ class Tests(object):
             EM.dateDestroy(event["date"])
         EM.destroyEventManager(em)
 
-        assert_test(filecmp.cmp("./outputs/3.2.2_test_2.txt", "./expected_outputs/3.2.2_test_2.txt"), True)
+        input_name = "3.2.2_test_2.txt"
+        assert_test(filecmp.cmp("./outputs/3.2.2_test_2.txt", "./expected_outputs/3.2.2_test_2.txt"), True, "\nExpected: <a href='/ex02/staging/{STAGING_ID}/expected_outputs/" + input_name + "'>expected_" + input_name + "</a>, but got instead: <a href='/ex02/staging/{STAGING_ID}/outputs/" + input_name + "'>{}</a>".format(
+            input_name))
 
 
 
