@@ -60,7 +60,6 @@ class Tests(object):
             EM.dateDestroy(event["date"])
         EM.destroyEventManager(em)
 
-
         input_name = "3.2.2_test_3.txt"
         assert_test(filecmp.cmp("./outputs/3.2.2_test_3.txt", "./expected_outputs/3.2.2_test_3.txt"), True,
                     "\nExpected: <a href='/ex02/staging/{STAGING_ID}/expected_outputs/" + input_name + "'>expected_" + input_name + "</a>, but got instead: <a href='/ex02/staging/{STAGING_ID}/outputs/" + input_name + "'>{}</a>".format(
