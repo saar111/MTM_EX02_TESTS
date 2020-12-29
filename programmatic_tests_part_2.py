@@ -52,7 +52,7 @@ class Tests(object):
                         {"name": "Event3", "id": 3, "date": EM.dateCreate(3, 1, 2000)},
                         {"name": "Event2", "id": 2, "date": EM.dateCreate(2, 1, 2000)}]
 
-        em = eventManager.printEventsList(events_lists, "./outputs/3.2.2_test_3.txt")
+        em = eventManager.printEventsList(events_lists, "./outputs/3.2.2_test_3_STUB.txt")
         EM.emTick(em, 1)
         EM.emPrintAllEvents(em, "./outputs/3.2.2_test_3.txt")
 
