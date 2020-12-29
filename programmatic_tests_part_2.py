@@ -43,6 +43,26 @@ class Tests(object):
                     "\nExpected: <a href='/ex02/staging/{STAGING_ID}/expected_outputs/" + input_name + "'>expected_" + input_name + "</a>, but got instead: <a href='/ex02/staging/{STAGING_ID}/outputs/" + input_name + "'>{}</a>".format(
                         input_name))
 
+    @staticmethod
+    def testPrintEventListFindsEarliestDateCorrectly():
+        events_lists = [{"name": "Event1", "id": 1, "date": EM.dateCreate(1, 1, 2000)},
+                        {"name": "Event6", "id": 6, "date": EM.dateCreate(6, 1, 2003)},
+                        {"name": "Event4", "id": 4, "date": EM.dateCreate(4, 1, 2000)},
+                        {"name": "Event5", "id": 5, "date": EM.dateCreate(5, 1, 1998)},
+                        {"name": "Event3", "id": 3, "date": EM.dateCreate(3, 1, 2000)},
+                        {"name": "Event2", "id": 2, "date": EM.dateCreate(2, 1, 2000)}]
+
+        em = eventManager.printEventsList(events_lists, "./outputs/3.2.2_test_3.txt")
+
+        for event in events_lists:
+            EM.dateDestroy(event["date"])
+        EM.destroyEventManager(em)
+
+        input_name = "3.2.2_test_3.txt"
+        assert_test(filecmp.cmp("./outputs/3.2.2_test_3.txt", "./expected_outputs/3.2.2_test_3.txt"), True,
+                    "\nExpected: <a href='/ex02/staging/{STAGING_ID}/expected_outputs/" + input_name + "'>expected_" + input_name + "</a>, but got instead: <a href='/ex02/staging/{STAGING_ID}/outputs/" + input_name + "'>{}</a>".format(
+                        input_name))
+
 
 TESTS = method_list = [getattr(Tests, func) for func in dir(Tests) if
                        callable(getattr(Tests, func)) and not func.startswith("__")]
