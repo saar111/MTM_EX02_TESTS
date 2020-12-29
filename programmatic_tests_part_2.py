@@ -58,7 +58,6 @@ class Tests(object):
             EM.dateDestroy(event["date"])
         EM.destroyEventManager(em)
 
-        EM.emTick(em, 1)
 
         input_name = "3.2.2_test_3.txt"
         assert_test(filecmp.cmp("./outputs/3.2.2_test_3.txt", "./expected_outputs/3.2.2_test_3.txt"), True,
