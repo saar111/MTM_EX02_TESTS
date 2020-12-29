@@ -53,6 +53,8 @@ class Tests(object):
                         {"name": "Event2", "id": 2, "date": EM.dateCreate(2, 1, 2000)}]
 
         em = eventManager.printEventsList(events_lists, "./outputs/3.2.2_test_3.txt")
+        EM.emTick(em, 1)
+        em = eventManager.printEventsList(events_lists, "./outputs/3.2.2_test_3.txt")
 
         for event in events_lists:
             EM.dateDestroy(event["date"])
