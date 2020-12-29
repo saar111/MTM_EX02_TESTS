@@ -2,6 +2,7 @@ import traceback
 import filecmp
 import os
 import re
+import sys
 
 import programmatic_tests_part_1 as tests1
 import programmatic_tests_part_2 as tests2
@@ -91,14 +92,27 @@ def run_test(test):
     print("<hr>", end="")
 
 
-if __name__ == "__main__":
+def main():
+    test_type = "1"
+    if len(sys.argv) > 1:
+        test_type = sys.argv[1]
+
     input_names = get_valid_input_names_to_run()
 
-    # TODO: python tests
-    for test in tests1.TESTS:
-        run_test(test)
+    if test_type == "2":
+        for test in tests2.TESTS:
+            run_test(test)
+        return  # Dont run file tests
+
+    if test_type == "1":
+        for test in tests1.TESTS:
+            run_test(test)
 
     if not os.path.exists(OUTPUTS_PATH):
         os.mkdir(OUTPUTS_PATH)
     for input_path in input_names:
         run_test(input_path)
+
+
+if __name__ == "__main__":
+    main()
