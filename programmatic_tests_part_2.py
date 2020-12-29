@@ -36,7 +36,7 @@ class Tests(object):
             EM.dateDestroy(event["date"])
         EM.destroyEventManager(em)
 
-        assert_test(filecmp.cmp("./outputs/3.2.2_test_1.txt", "./expected_outputs/3.2.2_test_1.txt"), True)
+        assert_test(filecmp.cmp("./outputs/3.2.2_test_2.txt", "./expected_outputs/3.2.2_test_2.txt"), True)
 
 
 
